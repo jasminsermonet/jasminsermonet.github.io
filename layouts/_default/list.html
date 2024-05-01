@@ -1,0 +1,60 @@
+{{- define "main" -}}
+<!-- 
+<div
+class="container"
+data-next="{{- i18n "next" -}}"
+data-prev="{{- i18n "prev" -}}"
+data-close="{{- i18n "close" -}}"
+data-loading="{{- i18n "loading" -}}"
+>
+  <div class="container">
+  {{- with partial "function/getResources.html" . -}}
+  {{- range .  -}}
+  {{- if ne .ResourceType "image" -}}
+    <div class="column">
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Content }}</p>
+    </div>
+    {{- end -}}
+    {{- if eq .ResourceType "image" -}}
+    {{- $image := . -}}
+    <div class="column">
+      <img src="{{ $image.RelPermalink }}" width="100%" height="auto">
+    </div>
+    {{- end -}}
+  {{- end -}}
+  {{- end -}}
+  {{- partial "simplenav.html" . -}}
+</div> -->
+
+<div class="col-xs-12 col-sm-8 col-md-9 content-column">
+  <div class="grid">
+      <!-- <div class="row" data-masonry='{"percentPosition": true }'> -->
+        {{- with partial "function/getResources.html" . -}}
+        {{- range .  -}}
+            <div class="grid-item">
+                <div class="box-masonry">
+                  {{- if eq .ResourceType "image" -}}
+                      <a href="{{ .Permalink }}" title="" class="box-masonry-image with-hover-overlay">
+                          <img src="{{ .RelPermalink }}" alt="" class="img-responsive">
+                      </a>
+                    {{- else -}}
+                    <div class="box-masonry-text">
+                        <div class="box-masonry-description">
+                          <p>
+                            <h2>{{ .Title }}</h2>
+                            <p>{{ .Content }}</p>
+                          </p>
+                        </div>
+                    </div>
+                  {{- end -}}
+                </div>
+            </div>
+        {{- end -}}
+        {{- end -}}
+      <!-- </div> -->
+  </div>
+  {{- partial "simplenav.html" . -}}
+</div>
+
+{{- end -}} 

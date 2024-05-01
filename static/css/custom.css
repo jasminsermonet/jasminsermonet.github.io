@@ -1,0 +1,13 @@
+.book-embed-container {
+    position: relative;
+    padding-bottom: auto; /* set the aspect ratio here as (height / width) * 100% */
+    height: auto;
+    overflow: hidden;
+    max-width: 100%;
+ }
+ .book-embed-container iframe {
+    position: absolute;
+    padding: 20px;
+    width: auto;
+    height: auto;
+ }

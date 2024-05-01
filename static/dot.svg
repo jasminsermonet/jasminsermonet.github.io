@@ -2,14 +2,14 @@
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
   <style>
     circle {
-      fill: white;
-      stroke: black;
+      fill: #ff89d1;
+      stroke: #ff89d1;
       stroke-width: 5px;
     }
     @media (prefers-color-scheme: dark) {
       circle {
-        fill: black;
-        stroke: white;
+        fill: #ff89d1;
+        stroke: #ff89d1;
       }
     }
   </style>

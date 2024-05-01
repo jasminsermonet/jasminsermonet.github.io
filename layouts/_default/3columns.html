@@ -1,0 +1,32 @@
+{{- define "main" -}}
+  <div
+    class="container"
+    data-next="{{- i18n "next" -}}"
+    data-prev="{{- i18n "prev" -}}"
+    data-close="{{- i18n "close" -}}"
+    data-loading="{{- i18n "loading" -}}"
+  >
+      <div class="container">
+        {{- with .Content -}}
+        <div class="column">
+          <h2> {{- . -}}</h2>
+          <p>This is the content of column 1.</p>
+        </div>
+        {{- end -}}
+        {{- with .Content -}}
+        <div class="column">
+          <h2> {{- . -}}</h2>
+          <p>This is the content of column 2.</p>
+        </div>
+        {{- end -}}
+        {{- with .Content -}}
+        <div class="column">
+          <h2> {{- . -}}</h2>
+          <p>This is the content of column 3.</p>
+        </div>
+        {{- end -}}
+      </div>
+
+    {{- partial "nav.html" . -}}
+  </div>
+{{- end -}}
